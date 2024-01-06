@@ -6,8 +6,10 @@ from sklearn.compose import ColumnTransformer, make_column_selector
 from sklearn.preprocessing import OneHotEncoder, StandardScaler, OrdinalEncoder
 import pandas as pd
 import numpy as np
+from flask_cors import CORS  # Import CORS from flask_cors
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 # Load your model using pickle
 with open('./models/mlp_model_rfe_94_v3.pkl', 'rb') as model_file:
